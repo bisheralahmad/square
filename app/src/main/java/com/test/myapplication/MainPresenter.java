@@ -18,7 +18,10 @@ public class MainPresenter implements MainContract.Presenter {
         int square = n*n;
 
         for (i = 1; i <= square; i++) {
-            magic[row][col] = i;
+            if(row<n&&col<n){
+                magic[row][col] = i;
+
+            }
             if (i % n == 0) {
                 row++;
             } else {
@@ -38,7 +41,7 @@ public class MainPresenter implements MainContract.Presenter {
 
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++) {
-                result = result + "" + magic[i][j] + " ";
+                result = result + "" + magic[i][j] + "    ";
             }
             result = result + "\n";
         }
